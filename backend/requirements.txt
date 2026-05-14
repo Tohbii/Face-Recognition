@@ -1,0 +1,6 @@
+flask
+flask-cors
+opencv-contrib-python
+numpy
+scikit-learn
+matplotlib
