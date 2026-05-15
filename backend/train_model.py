@@ -1,6 +1,7 @@
 import os
 import cv2
 import pickle
+import numpy as np
 
 from utils import load_dataset
 
@@ -37,6 +38,9 @@ print("Loading dataset...")
 faces, labels, label_map = load_dataset(DATASET_PATH)
 
 print(f"Total faces loaded: {len(faces)}")
+
+# Convert labels to numpy array
+labels = np.array(labels)
 
 # Train recognizer
 recognizer.train(faces, labels)

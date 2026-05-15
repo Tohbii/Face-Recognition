@@ -3,7 +3,13 @@ import cv2
 import numpy as np
 
 # Path to Haar Cascade XML file
-CASCADE_PATH = "haarcascade/haarcascade_frontalface_default.xml"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+CASCADE_PATH = os.path.join(
+    BASE_DIR,
+    "haarcascade",
+    "haarcascade_frontalface_default.xml"
+)
 
 # Load Haar Cascade classifier
 face_cascade = cv2.CascadeClassifier(CASCADE_PATH)
