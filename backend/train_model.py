@@ -2,12 +2,12 @@ import os
 import cv2
 import pickle
 import numpy as np
-import json
+
 
 from utils import load_dataset
 
 # Dataset path
-DATASET_PATH = "dataset"
+DATASET_PATH = "train_dataset"
 
 # Create LBPH recognizer
 recognizer = cv2.face.LBPHFaceRecognizer_create()
