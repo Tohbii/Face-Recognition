@@ -3,15 +3,21 @@ function PredictionCard({ result }) {
   if (!result) return null;
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-6 mt-8">
+    <div className="mt-4 border border-cyan-500/20 bg-cyan-500/5 rounded-xl p-4">
 
-      <h2 className="text-2xl font-bold mb-4">
+      <div className="flex items-center justify-between mb-3" >
+
+        <h2 className="text-2xl font-bold  uppercase tracking-widest mb-3">
         Prediction Result
-      </h2>
+        </h2>
+
+      </div>
+
+      
 
       <div className="space-y-3">
 
-        <div>
+        <div className="text-xl font-black text-cyan-300 tracking-wider mb-2"> 
           <span className="font-semibold">
             Status:
           </span>
