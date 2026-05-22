@@ -74,7 +74,7 @@ function UploadForm({ setResult }) {
 
   return (
 
-    <div className="relative z-10 w-full max-w-md">
+    <div className="  mx-auto relative z-10 w-full max-w-md">
 
 
       <div className="border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 shadow-[0_0_60px_rgba(0,245,255,0.04)] ">
