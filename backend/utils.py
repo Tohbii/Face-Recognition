@@ -51,10 +51,11 @@ def preprocess_face(image_path):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Detect faces
-    faces = face_cascade.detectMultiScale(
+    faces = face_cascade.detectMultiScale (
         gray,
-        scaleFactor=1.2,
-        minNeighbors=5
+        scaleFactor=1.3,
+        minNeighbors=5,
+        minSize=(50, 50)
     )
 
     # If no face detected
@@ -68,6 +69,8 @@ def preprocess_face(image_path):
 
     # Resize image
     face = cv2.resize(face, IMG_SIZE)
+
+    face = cv2.equalizeHist(face)  # Optional: improve contrast
 
     return face
 

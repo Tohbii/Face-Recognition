@@ -64,13 +64,18 @@ print(f"Recall   : {recall:.2f}")
 print(f"F1 Score : {f1:.2f}")
 
 # Confusion Matrix
-cm = confusion_matrix(y_true, y_pred)
+# Confusion Matrix
+all_labels = sorted(list(set(y_true + y_pred)))
 
-unique_labels = sorted(list(set(y_true)))
+cm = confusion_matrix(
+    y_true,
+    y_pred,
+    labels=all_labels
+)
 
 display_names = [
     label_map[label]
-    for label in unique_labels
+    for label in all_labels
 ]
 
 plt.figure(figsize=(20, 20))
@@ -80,10 +85,13 @@ disp = ConfusionMatrixDisplay(
     display_labels=display_names
 )
 
-disp.plot(cmap=plt.cm.Blues,
-          xticks_rotation=90
-          )
+disp.plot(
+    cmap=plt.cm.Blues,
+    xticks_rotation=90
+)
 
 plt.title("Confusion Matrix")
+
+plt.tight_layout()
 
 plt.show()

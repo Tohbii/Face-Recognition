@@ -37,7 +37,7 @@ def predict_person(image_path):
     80 = weak match
     """
 
-    THRESHOLD = 60
+    THRESHOLD = 80
 
     if confidence > THRESHOLD:
         return {
